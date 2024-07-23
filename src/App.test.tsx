@@ -1,9 +1,16 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+jest.mock('./components/Search', () => ({
+  __esModule: true,
+  default: () => <div data-testid="search-form">Mocked SearchForm</div>,
+}));
+
+describe('App', () => {
+  it('should render the SearchForm component', () => {
+    render(<App />);
+
+    const searchForm = screen.getByTestId('search-form');
+    expect(searchForm).toBeInTheDocument();
+  });
 });

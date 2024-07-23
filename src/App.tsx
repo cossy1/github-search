@@ -1,11 +1,10 @@
-import './App.css';
 import SearchForm from './components/Search';
 
 function App() {
   return (
-    <div className="App">
-      <SearchForm />
-    </div>
+    <div className="bg-slate-100 h-screen">
+    <SearchForm />
+  </div>
   );
 }
 
