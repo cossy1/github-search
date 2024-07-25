@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-jest.mock('./components/Search', () => ({
+jest.mock('./components/SearchContainer', () => ({
   __esModule: true,
   default: () => <div data-testid="search-form">Mocked SearchForm</div>,
 }));

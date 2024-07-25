@@ -21,7 +21,17 @@ interface ICardProps {
     events_url: string;
 }
 
-const Card: React.FC<ICardProps> = ({ src, name, type, site_admin, score, events_url, followers_url, subscriptions_url, organizations_url }) => {
+const Card: React.FC<ICardProps> = ({
+    src,
+    name,
+    type,
+    site_admin,
+    score,
+    events_url,
+    followers_url,
+    subscriptions_url,
+    organizations_url,
+}) => {
     return (
         <div className="bg-white flex items-center rounded-xl shadow-lg">
             <div className="bg-blue-500 p-2 sm:p-4 w-1/2 sm:w-1/3 rounded-s-xl shadow-md">
@@ -39,20 +49,29 @@ const Card: React.FC<ICardProps> = ({ src, name, type, site_admin, score, events
                     </p>
                     <p className="capitalize text-sm lg:text-lg">Type: {type}</p>
                     <p className="text-sm lg:text-lg">Score: {score}</p>
-                    <p className="text-sm lg:text-lg flex items-center justify-start">
+                    <p
+                        className="text-sm lg:text-lg flex items-center justify-start"
+                        data-testid="site-admin-icon"
+                    >
                         Site Admin:{" "}
                         <span className="pl-2">
                             {site_admin ? (
-                                <IoCheckmarkCircleOutline className="w-5 h-5" />
+                                <IoCheckmarkCircleOutline
+                                    className="w-5 h-5"
+                                    data-testid="checkmark-icon"
+                                />
                             ) : (
-                                <MdOutlineCancel className="w-5 h-5" />
+                                <MdOutlineCancel
+                                    className="w-5 h-5"
+                                    data-testid="cancel-icon"
+                                />
                             )}
                         </span>
                     </p>
                 </div>
 
                 <div className="flex items-center gap-4">
-                    <a href={followers_url} target="_blank" rel="noopener noreferrer">
+                    <a href={followers_url} target="_blank" rel="noopener noreferrer" data-testid="follower">
                         <GiShadowFollower className="w-5 h-5 cursor-pointer hover:bg-blue-300 transition duration-500 pb-1 hover:rounded-full" />
                     </a>
                     <a href={events_url} target="_blank" rel="noopener noreferrer">
