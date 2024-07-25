@@ -15,7 +15,7 @@ const Results: React.FC<IResultsProps> = ({ isLoading, hasSearched, data }) => {
             {!isLoading && hasSearched && (
                 <>
                     {data.length === 0 ? (
-                        <h3>No data Found</h3>
+                        <h3 className="text-center">No Data Found</h3>
                     ) : (
                         <ul className="list-none p-0 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
                             {data.map((res, index) => {
