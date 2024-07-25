@@ -74,7 +74,7 @@ const Card: React.FC<ICardProps> = ({
                     <a href={followers_url} target="_blank" rel="noopener noreferrer" data-testid="follower">
                         <GiShadowFollower className="w-5 h-5 cursor-pointer hover:bg-blue-300 transition duration-500 pb-1 hover:rounded-full" />
                     </a>
-                    <a href={events_url} target="_blank" rel="noopener noreferrer">
+                    <a href={events_url} target="_blank" rel="noopener noreferrer" data-testid="event">
                         <MdOutlineEmojiEvents className="w-5 h-5 cursor-pointer hover:bg-blue-300 transition duration-500 pb-1 hover:rounded-full" />
                     </a>
                     <a href={subscriptions_url} target="_blank" rel="noopener noreferrer">

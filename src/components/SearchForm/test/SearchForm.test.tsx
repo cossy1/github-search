@@ -15,7 +15,6 @@ const mockProps = {
 
 describe('App', () => {
     it('should render the SearchForm component properly', async () => {
-
         render(<SearchForm {...mockProps} />);
 
         const titleText = screen.getByText('Search Github User or Organization')
@@ -30,7 +29,6 @@ describe('App', () => {
     });
 
     it('should take snapshot of the SearchForm component', () => {
-
         render(<SearchForm {...mockProps} />);
 
         expect(screen).toMatchSnapshot();
